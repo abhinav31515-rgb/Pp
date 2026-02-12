@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PPT Luxury AI Stylist</title>
-    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
   </head>
   <body>
     <main class="container">
       <section class="hero">
-        <p class="tag">Cinematic Deck Upgrade</p>
+        <p class="tag">Commercial-Grade Deck Redesign</p>
         <h1>PPT Luxury AI Stylist</h1>
         <p>
-          Upload a .pptx file, get luxury brand styling, cinematic motion cues, smart placeholder visuals,
-          and expert feedback-driven touch-ups — all without paid APIs.
+          Upload a PPTX and get brand-aware styling, premium layout corrections, cinematic motion cues,
+          and optional Gemini-powered creative direction.
         </p>
       </section>
 
@@ -24,19 +24,24 @@
         </label>
 
         <label class="field">
-          <span>Feedback for style touch-up</span>
-          <textarea id="feedback" placeholder="Example: Make it more editorial with warmer gold accents and calmer typography."></textarea>
+          <span>Creative feedback</span>
+          <textarea
+            id="feedback"
+            placeholder="Example: Keep it luxury but warmer; editorial serif titles; cleaner spacing for enterprise audience."
+          ></textarea>
         </label>
 
         <div class="actions">
-          <button id="analyzeBtn">Analyze Ideas & Style</button>
-          <button id="enhanceBtn" class="accent">Make It Luxury</button>
+          <button id="analyzeBtn">Analyze Quality</button>
+          <button id="enhanceBtn" class="accent">Generate Luxury Version</button>
         </div>
+        <p class="hint">Tip: Set <code>GEMINI_API_KEY</code> to add Gemini creative recommendations.</p>
       </section>
 
+      <p id="status" class="status hidden"></p>
       <section id="results" class="results hidden"></section>
     </main>
 
-    <script src="/static/app.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
   </body>
 </html>

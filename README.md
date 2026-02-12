@@ -1,13 +1,16 @@
 # PPT Luxury AI Stylist
 
-A web app that uploads a `.pptx` file, analyzes its design quality, infers use case, and produces an upgraded "luxury" styled version with:
+Commercial-grade web app for transforming uploaded `.pptx` decks into luxury, brand-consistent, cinematic presentations.
 
-- Better color palette and typography
-- Consistent title/body hierarchy
-- Placeholder visuals when slide images are missing
-- Cinematic motion cues inserted in speaker notes
-- Feedback-driven touch-ups from user text
-- No paid API dependency
+## What it does
+
+- Runs a design audit (title coverage, text density, visual balance, brand score)
+- Infers use case and applies a matching premium style system
+- Auto-fixes typography, palette, hierarchy, and visual consistency
+- Injects placeholder visuals when imagery is missing
+- Writes speaker-note animation cues for cinematic delivery
+- Accepts user feedback prompts for touchups
+- Optionally augments recommendations with Gemini when `GEMINI_API_KEY` is set
 
 ## Run locally
 
@@ -18,10 +21,16 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Open `http://localhost:8000`.
+Open http://localhost:8000.
+
+## API endpoints
+
+- `GET /health`
+- `POST /analyze` (`multipart/form-data` with `pptx`)
+- `POST /enhance` (`multipart/form-data` with `pptx` and optional `feedback`)
+- `GET /download/<filename>`
 
 ## Notes
 
-- Input must be `.pptx`
-- Output can be downloaded from the app after enhancement
-- Motion/animation guidance is embedded as notes because low-level animation authoring is not broadly supported by `python-pptx`
+- Uses local heuristics by default; no paid API is required.
+- To use Gemini ideas, set `GEMINI_API_KEY` in your environment.
