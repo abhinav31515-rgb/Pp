@@ -1,0 +1,101 @@
+:root {
+  --bg: #0b0b0e;
+  --panel: #15151b;
+  --muted: #b6b6c2;
+  --text: #f9f9fb;
+  --accent: #d2ad66;
+  --accent-2: #8f6a34;
+  --ok: #9fd79f;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #1a1a22 0%, var(--bg) 44%);
+  color: var(--text);
+}
+
+.container {
+  width: min(980px, 94vw);
+  margin: 32px auto 60px;
+}
+
+.hero {
+  border: 1px solid #2a2a35;
+  padding: 28px;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  background: linear-gradient(130deg, #14141b, #101014 70%);
+}
+
+.tag {
+  display: inline-block;
+  color: var(--accent);
+  border: 1px solid #503e21;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3.1rem); margin: 14px 0 10px; }
+.hero p { color: var(--muted); line-height: 1.6; }
+
+.panel,
+.results {
+  margin-top: 20px;
+  border: 1px solid #252530;
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.field { display: block; margin-bottom: 16px; }
+.field span { display: block; margin-bottom: 8px; color: #ddd; }
+input[type="file"], textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #30303f;
+  background: #101017;
+  color: #efefef;
+  padding: 12px;
+}
+textarea { min-height: 100px; resize: vertical; }
+
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+button {
+  border: 0;
+  padding: 11px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #111;
+  background: #d0d0db;
+  font-weight: 600;
+}
+button.accent {
+  background: linear-gradient(120deg, var(--accent), #f2d199);
+}
+button:hover { transform: translateY(-1px); }
+
+.hidden { display: none; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.card {
+  background: #101018;
+  border: 1px solid #29293a;
+  border-radius: 12px;
+  padding: 12px;
+}
+small { color: var(--muted); }
+.download {
+  display: inline-flex;
+  margin-top: 14px;
+  color: var(--ok);
+  text-decoration: none;
+  font-weight: 600;
+}

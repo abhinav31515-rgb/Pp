@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PPT Luxury AI Stylist</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero">
+        <p class="tag">Cinematic Deck Upgrade</p>
+        <h1>PPT Luxury AI Stylist</h1>
+        <p>
+          Upload a .pptx file, get luxury brand styling, cinematic motion cues, smart placeholder visuals,
+          and expert feedback-driven touch-ups — all without paid APIs.
+        </p>
+      </section>
+
+      <section class="panel">
+        <label class="field">
+          <span>PowerPoint file</span>
+          <input id="pptx" type="file" accept=".pptx" />
+        </label>
+
+        <label class="field">
+          <span>Feedback for style touch-up</span>
+          <textarea id="feedback" placeholder="Example: Make it more editorial with warmer gold accents and calmer typography."></textarea>
+        </label>
+
+        <div class="actions">
+          <button id="analyzeBtn">Analyze Ideas & Style</button>
+          <button id="enhanceBtn" class="accent">Make It Luxury</button>
+        </div>
+      </section>
+
+      <section id="results" class="results hidden"></section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
