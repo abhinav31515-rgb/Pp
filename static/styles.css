@@ -1,0 +1,151 @@
+:root {
+  --bg: #080b12;
+  --text: #e9edf5;
+  --muted: #a8b2c7;
+  --gold: #d7b06a;
+  --accent: #63d0ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 10% 10%, #1a2742 0%, var(--bg) 45%, #06070d 100%);
+}
+
+.container {
+  width: min(1060px, 92vw);
+  margin: 2rem auto 4rem;
+}
+
+.hero h1 {
+  margin: 0.4rem 0;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 780px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid rgba(215, 176, 106, 0.45);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+
+.panel,
+.results {
+  margin-top: 1.5rem;
+  background: linear-gradient(180deg, rgba(16, 25, 42, 0.95), rgba(10, 15, 26, 0.9));
+  border: 1px solid rgba(99, 208, 255, 0.15);
+  border-radius: 18px;
+  padding: 1.1rem;
+  box-shadow: 0 20px 60px rgba(1, 4, 10, 0.5);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 0.8rem;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  background: #0f1626;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+textarea {
+  min-height: 84px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  background: #212f4d;
+  color: var(--text);
+  cursor: pointer;
+}
+
+button.accent {
+  background: linear-gradient(90deg, #d7b06a, #f0dbac);
+  color: #1d1710;
+  font-weight: 600;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.status {
+  margin: 1rem 0 0;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid rgba(99, 208, 255, 0.25);
+  color: #c8e6ff;
+}
+
+.status.error {
+  border-color: rgba(246, 116, 116, 0.4);
+  color: #ffc8c8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.65rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 0.7rem;
+}
+
+.card small {
+  color: var(--muted);
+  display: block;
+}
+
+.download {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: var(--accent);
+}
+
+.hidden {
+  display: none;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
